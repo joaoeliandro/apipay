@@ -6,7 +6,7 @@ defmodule Apipay.Repo.Migrations.CreateUserTable do
       add :name, :string
       add :age, :integer
       add :email, :string
-      add :password, :string
+      add :password_hash, :string
       add :nickname, :string
 
       timestamps()
