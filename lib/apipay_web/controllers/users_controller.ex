@@ -3,6 +3,8 @@ defmodule ApipayWeb.UsersController do
 
   alias Apipay.User
 
+  action_fallback ApipayWeb.FallbackController
+
   def create(conn, params) do
     params
     |> Apipay.create_user()
@@ -15,10 +17,5 @@ defmodule ApipayWeb.UsersController do
     |> render("create.json", user: user)
   end
 
-  defp handle_response({:error, result}, conn) do
-    conn
-    |> put_status(:bad_request)
-    |> put_view(ApipayWeb.ErrorView)
-    |> render("400.json", result: result)
-  end
+  defp handle_response({:error, _result} = error, _conn), do: error
 end
