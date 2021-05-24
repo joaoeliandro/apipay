@@ -23,7 +23,7 @@ defmodule Apipay.Accounts.TransactionService do
   defp build_params(id, value), do: %{"id" => id, "value" => value}
 
   defp preload_data(repo, transaction) do
-    {:ok, repo.preload(transaction, from: [:user], to: [:user])}
+    {:ok, repo.preload(transaction, [:from, :to])}
   end
 
   defp run_transaction(multi) do
