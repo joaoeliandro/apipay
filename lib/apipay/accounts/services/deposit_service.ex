@@ -1,5 +1,5 @@
-defmodule Apipay.Accounts.Deposit do
-  alias Apipay.Accounts.Operation
+defmodule Apipay.Accounts.DepositService do
+  alias Apipay.Accounts.OperationUtil, as: Operation
   alias Apipay.Repo
 
   def call(params) do

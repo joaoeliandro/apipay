@@ -1,4 +1,4 @@
-defmodule Apipay.Accounts.Operation do
+defmodule Apipay.Accounts.OperationUtil do
   alias Ecto.Multi
 
   alias Apipay.Account
