@@ -2,7 +2,7 @@ defmodule Apipay.Account do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Apipay.User
+  alias Apipay.{Transaction, User}
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -12,6 +12,7 @@ defmodule Apipay.Account do
   schema "accounts" do
     field :balance, :decimal
     belongs_to :user, User
+    has_many :transactions, Transaction
 
     timestamps()
   end
