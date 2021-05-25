@@ -15,6 +15,7 @@ defmodule ApipayWeb.Router do
     post "/accounts/:id/deposit", AccountsController, :deposit
     post "/accounts/:id/withdraw", AccountsController, :withdraw
     post "/accounts/transaction", AccountsController, :transaction
+    get "/accounts/transactions", AccountsController, :all_transactions
   end
 
   # Enables LiveDashboard only for development
